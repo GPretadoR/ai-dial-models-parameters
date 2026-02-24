@@ -10,10 +10,31 @@ from task.app.main import run
 # - claude-3-7-sonnet@20250219
 # - gemini-2.5-pro
 
+# Try GPT-4o with n=3
+print("\n" + "="*60)
+print("Testing GPT-4o with n=3")
+print("="*60)
 run(
-    # TODO:
-    #  1. Provide `deployment_name` with model from the list above👆
-    #  2. Use `n` parameter with value in range from 1 to 5!
+    deployment_name='gpt-4o',
+    n=3
+)
+
+# Try Claude 3.7 Sonnet with n=2
+print("\n" + "="*60)
+print("Testing Claude 3.7 Sonnet with n=2")
+print("="*60)
+run(
+    deployment_name='claude-3-7-sonnet@20250219',
+    n=2
+)
+
+# Try Gemini 2.5 Pro with n=5
+print("\n" + "="*60)
+print("Testing Gemini 2.5 Pro with n=5")
+print("="*60)
+run(
+    deployment_name='gemini-2.5-pro',
+    n=5
 )
 
 # Pay attention to the number of choices in the response!

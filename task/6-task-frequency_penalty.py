@@ -8,11 +8,34 @@ from task.app.main import run
 #       Default: 0.0
 #  User massage: Explain the water cycle in simple terms for children
 
+# Try with frequency_penalty=-2.0 (encourages repetition)
+print("\n" + "="*60)
+print("Testing with frequency_penalty=-2.0 (more repetitive)")
+print("="*60)
 run(
     deployment_name='gpt-4o',
     print_only_content=True,
-    # TODO:
-    #  Use `frequency_penalty` parameter with different range (-2.0 to 2.0).
+    frequency_penalty=-2.0
+)
+
+# Try with frequency_penalty=0.0 (neutral/default)
+print("\n" + "="*60)
+print("Testing with frequency_penalty=0.0 (neutral)")
+print("="*60)
+run(
+    deployment_name='gpt-4o',
+    print_only_content=True,
+    frequency_penalty=0.0
+)
+
+# Try with frequency_penalty=2.0 (discourages repetition)
+print("\n" + "="*60)
+print("Testing with frequency_penalty=2.0 (less repetitive)")
+print("="*60)
+run(
+    deployment_name='gpt-4o',
+    print_only_content=True,
+    frequency_penalty=2.0
 )
 
 # Pay attention that when we set for `gpt-4o` frequency_penalty as -2.0 - the request is running too long,

@@ -8,11 +8,23 @@ from task.app.main import run
 #       Default: None or random unless specified on the LLM side
 #  User massage: Name a random animal
 
+# With seed parameter - should give consistent results
+print("\n" + "="*60)
+print("Testing with seed=42 and n=5")
+print("="*60)
 run(
     deployment_name='gpt-4o',
-    # TODO:
-    #  1. Use `seed` parameter with value 42 (or whatever you want)
-    #  2. Use `n` parameter with value 5
+    seed=42,
+    n=5
+)
+
+# Without seed parameter - should give more varied results
+print("\n" + "="*60)
+print("Testing without seed and n=5 (more variety expected)")
+print("="*60)
+run(
+    deployment_name='gpt-4o',
+    n=5
 )
 
 # Check the content in choices. The expected result is that in almost all choices the result will be the same.
